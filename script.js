@@ -211,4 +211,15 @@ document.addEventListener('DOMContentLoaded', preencherCategorias);
 
     // Inicializa os produtos na primeira página
     exibirProdutos('conjuntos');
+// função que faz o menu sanduiche aparecer
+
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  menu.classList.toggle("show");
+}
+
+function closeMenu() {
+  const menu = document.getElementById("menu");
+  menu.classList.remove("show");
+}
 
