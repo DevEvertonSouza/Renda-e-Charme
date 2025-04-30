@@ -121,93 +121,9 @@ botaoCarrinho.addEventListener('click', () => {
     } else {
         divCarrinho.style.display = 'none';
     }
-});
-function filterProducts() {
-  const categoryFilter = document.getElementById("category").value;
-  const priceFilter = document.getElementById("price").value;
 
-  const products = document.querySelectorAll(".product"); // Supondo que seus produtos tenham a classe 'product'
 
-  products.forEach(product => {
-    const category = product.dataset.category; // Categoria do produto
-    const price = parseFloat(product.dataset.price); // Preço do produto
 
-    // Lógica para filtro de categoria
-    const categoryMatch = categoryFilter === "all" || category === categoryFilter;
-
-    // Lógica para filtro de preço
-    let priceMatch = true;
-    if (priceFilter === "low") {
-      priceMatch = price <= 50;
-    } else if (priceFilter === "medium") {
-      priceMatch = price > 50 && price <= 150;
-    } else if (priceFilter === "high") {
-      priceMatch = price > 150;
-    }
-
-    // Se o produto corresponder aos filtros, mostrar, caso contrário, esconder
-    if (categoryMatch && priceMatch) {
-      product.style.display = "block";
-    } else {
-      product.style.display = "none";
-    }
-  });
-}
-// Pegar categorias únicas e adicionar no filtro automaticamente
-function preencherCategorias() {
-    const produtos = document.querySelectorAll('.produto');
-    const selectCategoria = document.getElementById('category');
-
-    const categorias = new Set(); // Isso evita categorias repetidas
-
-    produtos.forEach(produto => {
-        const categoria = produto.dataset.category;
-        if (categoria) {
-            categorias.add(categoria);
-        }
-    });
-
-    categorias.forEach(cat => {
-        const option = document.createElement('option');
-        option.value = cat;
-        option.textContent = cat.charAt(0).toUpperCase() + cat.slice(1); // Primeira letra maiúscula
-        selectCategoria.appendChild(option);
-    });
-}
-
-// Chama a função quando a página carregar
-document.addEventListener('DOMContentLoaded', preencherCategorias);
-
-    let paginaAtual = 1;
-    const produtosPorPagina = 5; // Quantos produtos exibir por vez
-
-    function exibirProdutos(categoria) {
-        const produtos = document.querySelectorAll(`#${categoria} .produto`);
-        const inicio = (paginaAtual - 1) * produtosPorPagina;
-        const fim = inicio + produtosPorPagina;
-        
-        produtos.forEach((produto, index) => {
-            if (index >= inicio && index < fim) {
-                produto.style.display = "block";
-            } else {
-                produto.style.display = "none";
-            }
-        });
-
-        // Habilitar ou desabilitar os botões de navegação
-        document.getElementById("pagina-anterior").disabled = paginaAtual === 1;
-        document.getElementById("proxima-pagina").disabled = fim >= produtos.length;
-    }
-
-    function proximaPagina(categoria) {
-        paginaAtual++;
-        exibirProdutos(categoria);
-    }
-
-    function paginaAnterior(categoria) {
-        paginaAtual--;
-        exibirProdutos(categoria);
-    }
 
     // Inicializa os produtos na primeira página
     exibirProdutos('conjuntos');
