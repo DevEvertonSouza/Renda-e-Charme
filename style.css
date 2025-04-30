@@ -1,0 +1,309 @@
+
+/* ---------------- Reset ---------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------------- Base ---------------- */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f0f4;
+    color: #3b2f2f;
+    scroll-behavior: smooth;
+}
+
+/* ---------------- Header & Nav ---------------- */
+header {
+    background-color: #b76e79;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* ---------------- Banner ---------------- */
+.banner {
+    text-align: center;
+    padding: 2rem rem;
+    background: linear-gradient(to right, #e9c1c9, #f6d6dc);
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* ---------------- Botões ---------------- */
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: #a05266;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #8b3e52;
+    transform: scale(1.05);
+}
+
+/* ---------------- Seções ---------------- */
+section {
+    padding: 4rem 2rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* ---------------- Produtos ---------------- */
+.produtos-container {
+    display: flex;
+    justify-content: space-between;/*Espalha as imagens lado a lado*/
+    gap: 1rem;
+    flex-wrap: wrap;/*Garante que as imagens se ajuste se o espaço for pequeno*/
+   
+   
+}
+
+.produto {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s;
+    flex: 1 1 30%;
+}
+@media (max-width: 768px) {
+  .produto {
+    width: 100%;
+  }
+}
+
+
+.produto:hover {
+    transform: translateY(-5px);
+}
+
+.produto img {
+    width: 100%;
+    height: auto; /* mantem a propoção da imagem*/
+    max-width: 300px; /*limita o tamanho da largura da Imagem*/
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* ---------------- Rodapé ---------------- */
+footer {
+    background-color: #b76e79;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.voltar-topo:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+}
+
+/* ---------------- Animações ---------------- */
+.animado {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.animado.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+.carrinho {
+    position: fixed;
+    right: 20px;
+    top: 80px;
+    width: 300px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    padding: 1rem;
+    display: none;
+    z-index: 1000;
+    animation: deslizar 0.3s ease-out;
+}
+
+@keyframes deslizar {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-carrinho {
+    
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: #a05266;
+    color: white;
+    padding: 1rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.btn-remover {
+    background-color: #e57373;
+    border: none;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    margin-left: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.produto {
+  text-align: center;
+  width: 180px; /* Reduzi de 300px para 180px */
+  height: auto;
+  padding: 12px;
+  margin: 10px;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+
+.imagem-container {
+  position: relative;
+  width: 100%;
+  padding-top: 120%; /* proporção visual bonita sem exagero */
+}
+
+
+.imagem-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+}
+
+
+.imagem-container {
+  padding-top: 100%; /* Garante altura proporcional */
+}
+
+.imagem-container img:nth-child(1) {
+  opacity: 1;
+  z-index: 2;
+}
+
+.imagem-container img:nth-child(2) {
+  opacity: 0;
+  z-index: 1;
+}
+
+.imagem-container:hover img:nth-child(1) {
+  opacity: 0;
+}
+
+.imagem-container:hover img:nth-child(2) {
+  opacity: 1;
+}
+
+.produto h3,
+.produto .preco,
+.produto .btn {
+  margin-top: 10px;
+  position: relative;
+  z-index: 3;
+}
+
+.imagem-container:hover img:nth-child(2) {
+  opacity: 1;
+}
+/* ----------- Responsividade para tablets ----------- */
+@media (max-width: 1024px) {
+  .produtos-container {
+    justify-content: center;
+  }
+
+  .produto {
+    flex: 1 1 45%; /* Mostra 2 produtos por linha */
+    max-width: 45%;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+/* ----------- Responsividade para celulares ----------- */
+@media (max-width: 768px) {
+  .produto {
+    flex: 1 1 100%; /* Mostra 1 produto por linha */
+    max-width: 100%;
+  }
+
+  .banner h1 {
+    font-size: 1.8rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
+
+  .btn-carrinho {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+
+  .carrinho {
+    width: 90%;
+    right: 5%;
+  }
+}

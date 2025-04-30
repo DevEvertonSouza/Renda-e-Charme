@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Lingerie - Elegância e Conforto</title>
+    <link rel="stylesheet" href="loja.css">
+    
+</head>
+<img src="FotosReformulada/logorenda.png" alt="Logo Renda & Charme" style="height: 200px; float: left; margin-left: 1%;">
+
+<body>
+      <!-- Carrinho de compras, que será atualizado dinamicamente -->
+ <!-- Carrinho de Compras -->
+<div id="carrinho" class="carrinho">
+  <h3>🛍️ Seu Carrinho</h3>
+  <ul id="itens-carrinho"></ul>
+  <p><strong>Total:</strong> R$ <span id="total-carrinho">0.00</span></p>
+  <button class="btn" onclick="finalizarCompra()">Finalizar Compra</button>
+</div>
+
+<!-- Botão flutuante para abrir o carrinho -->
+<button id="abrir-carrinho" class="btn-carrinho"></button>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#loja-secreta">Loja Secreta</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="animado">
+        <div class="banner">
+            <h1>Bem-vindo à Renda & Charme</h1>
+            <p>Delicadeza que Conquista ,Charme que Encanta.</p>
+            <a href="#loja-secreta" class="btn">🔒Acessar Loja Secreta</a>
+
+        </div>
+    </section>
+    <!-- Filtro de Categoria -->
+<div class="filters">
+  <label for="category">Categoria:</label>
+  <select id="category" name="category" onchange="filterProducts()">
+    <option value="all">Todas as Categorias</option>
+    <option value="conjuntos">Conjuntos</option>
+    <option value="tangas">Tangas</option>
+    <option value="calcao">Calção</option>
+    <option value="sutiãs">Sutiãs</option>
+    <option value="camisolas">Camisolas</option>
+  </select>
+
+  <!-- Filtro de Faixa de Preço -->
+  <label for="price">Preço:</label>
+  <select id="price" name="price" onchange="filterProducts()">
+    <option value="all">Todos os Preços</option>
+    <option value="low">Até R$50</option>
+    <option value="medium">R$50 - R$150</option>
+    <option value="high">Acima de R$150</option>
+  </select>
+</div>
+<!--Destaque dos produtos da Semana-->
+<section id="vitrine-destaque" class="animado">
+    <h2>Destaques da Semana</h2>
+    
+
+    <div class="produtos-container">
+     <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="fotosRc/camisolas/052-removebg-preview.png" alt="Conjunto Sexy Vermelho">
+            <img class="img1" src="fotosRc/camisolas/051-removebg-preview(1).png" alt="Conjunto Sexy Vermelho">
+        </div>
+        <h3>Camisola Desejo </h3>
+        <p class="preco">Preço R$ 59,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Camisola Desejo', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+     <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="fotosRc/047-removebg-preview.png" alt="Camisola Desejo">
+            <img class="img1" src="fotosRc/045-removebg-preview.png" alt="Camisola Desejo">
+        </div>
+        <h3>Boddy Sapeca </h3>
+        <p class="preco">Preço R$ 59,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Boddy Sapeca', '#preco-1')">Adicionar ao carrinho</button>
+         </div>
+
+             <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="fotosRc/050-removebg-preview.png" alt="Boddy Sapeca">
+            <img class="img1" src="fotosRc/049-removebg-preview.png" alt="Boddy Sapeca">
+        </div>
+        <h3>Camisola Tule Bordado</h3>
+        <p class="preco">Preço R$ 59,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Camisola Tule Bordado', '#preco-1')">Adicionar ao carrinho</button>
+    
+    </div>
+         <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="fotosRc/076-removebg-preview.png" alt="Conjunto Renata">
+            <img class="img1" src="fotosRc/075-removebg-preview.png" alt="Conjunto Renata">
+        </div>
+        <h3>Conjunto Renata</h3>
+        <p class="preco">Preço R$ 34,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Renata', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+
+
+         <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="fotosRc/091.png" alt="Conjunto Franciele">
+            <img class="img1" src="fotosRc/092-rem.png" alt="Conjunto Franciele">
+        </div>
+        <h3>Conjunto Franciele</h3>
+        <p class="preco">Preço R$ 34,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Franciele', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+
+
+
+         <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="fotosRc/063-removebg-preview.png" alt="Conjunto Katia">
+            <img class="img1" src="fotosRc/064-removebg-preview.png" alt="Conjunto Katia">
+        </div>
+        <h3>Conjunto Katia</h3>
+        <p class="preco">Preço R$ 34,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Katia', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+</section>
+
+ 
+
+
+ <!--começa a parte dos produtos por categorias -->
+
+ 
+  <section id="categorias" class="animado">
+    <h2>Categorias</h2>
+    <div class="produtos-container">
+        <div class="produto animado">
+            <a href="#conjuntos">
+                <img src="FotosReformulada/conjuntos.jpg" alt="Conjuntos">
+                <h3>Conjuntos</h3>
+            
+        </div>
+        <div class="produto animado">
+            <a href="#tangas">
+                <img src="FotosReformulada/tangas.jpg" alt="Tangas">
+                <h3>Tangas</h3>
+            </a>
+        </div>
+        <div class="produto animado">
+            <a href="#calcao">
+                <img src="FotosReformulada/calcao.jpg" alt="Calções">
+                <h3>Calções</h3>
+            </a>
+        </div>
+        <div class="produto animado">
+            <a href="#sutias">
+                <img src="FotosReformulada/sutias.jpg" alt="Sutiãs">
+                <h3>Sutiãs</h3>
+            </a>
+        </div>
+        <div class="produto animado">
+            <a href="#camisolas">
+                <img src="FotosReformulada/camisolas.jpg" alt="Camisolas">
+                <h3>Camisolas</h3>
+            </a>
+        </div>
+    </div>
+</section>
+
+</section>
+
+        <section id="sobre" class="animado">
+        <h2>Quem Somos?</h2>
+        <p> Somos uma loja familiar carioca, especializada em lingeries de alto padrão desde 2018.  
+
+Nosso propósito é unir conforto, qualidade e design em peças que celebrem a autoestima da mulher.
+        </p>
+ Enquanto oferecemos aos revendedores uma linha lucrativa e com excelente custo-benefício.</p>  
+
+Seja você uma cliente que busca sofisticação e bem-estar ou um revendedor em busca de produtos diferenciados para impulsionar suas vendas, conte com nosso atendimento personalizado e a qualidade que só uma marca feita com paixão pode oferecer."</p>
+ <!--Seção que recebe os conjuntos Calcinha e Sutiã separadamente -->  
+<section class="animado">
+    <h2>Conjuntos</h2>
+    <div id="Conjuntos">
+         <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="fotosRc/091.png" alt="Conjunto Franciele">
+            <img class="img1" src="fotosRc/092-rem.png" alt="Conjunto Franciele">
+        </div>
+        <h3>Conjunto Franciele 1</h3>
+        <p class="preco">Preço R$ 34,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Franciele', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+         <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="fotosRc/063-removebg-preview.png" alt="Conjunto Katia">
+            <img class="img1" src="fotosRc/064-removebg-preview.png" alt="Conjunto Katia">
+        </div>
+        <h3>Conjunto Katia 1</h3>
+        <p class="preco">Preço R$ 34,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Katia', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+         <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="Conjuntos/068-removebg-preview.png" alt="Conjunto Amanda">
+            <img class="img1" src="Conjuntos/067-removebg-preview.png" alt="Conjunto Amanda">
+        </div>
+        <h3>Conjunto Amanda</h3>
+        <p class="preco">Preço R$ 34,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Amanda', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+         <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="Conjuntos/070-removebg-preview.png" alt="Conjunto Biju">
+            <img class="img1" src="Conjuntos/069-removebg-preview.png" alt="Conjunto Biju">
+        </div>
+        <h3>Conjunto Biju</h3>
+        <p class="preco">Preço R$ 34,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Biju', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+
+</div>
+         <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="Conjuntos/076-removebg-preview.png" alt="Conjunto Renata">
+            <img class="img1" src="Conjuntos/075-removebg-preview.png" alt="Conjunto Renata">
+        </div>
+        <h3>Conjunto Renata</h3>
+        <p class="preco">Preço R$ 34,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Renata', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+</div>
+         <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="Conjuntos/057-removebg-preview.png" alt="Conjunto Dara">
+            <img class="img1" src="Conjuntos/056-removebg-preview.png" alt="Conjunto Dara">
+        </div>
+        <h3>Conjunto Dara</h3>
+        <p class="preco">Preço R$ 34,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Dara', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+</div>
+         <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="Conjuntos/103-removebg-preview.png" alt="Conjunto Fernanda">
+            <img class="img1" src="Conjuntos/102-removebg-preview.png" alt="Conjunto Fernanda">
+        </div>
+        <h3>Conjunto Fernanda</h3>
+        <p class="preco">Preço R$ 34,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Fernanda', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+    </div>
+    </div>
+         <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="Conjuntos/099-removebg-preview.png" alt="Conjunto Calençon Rendado">
+            <img class="img1" src="Conjuntos/098-removebg-preview.png" alt="Conjunto Calençon Rendado">
+        </div>
+        <h3>Conjunto Calençon Rendado</h3>
+        <p class="preco">Preço R$ 34,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Calençon Rendado', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+</div>
+         <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="Conjuntos/104-removebg-preview.png" alt="Conjunto Carla">
+            <img class="img1" src="Conjuntos/105-removebg-preview.png" alt="Conjunto Carla">
+        </div>
+        <h3>Conjunto Carla </h3>
+        <p class="preco">Preço R$ 34,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Carla', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+</div>
+         <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="Conjuntos/072-removebg-preview.png" alt="Conjunto Franciele Liso">
+            <img class="img1" src="Conjuntos/071-removebg-preview.png" alt="Conjunto Franciele Liso">
+        </div>
+        <h3>Conjunto Franciele Liso </h3>
+        <p class="preco">Preço R$ 34,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Franciele Liso', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+</div>
+         <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="Conjuntos/066-removebg-preview.png" alt="Conjunto Geovana">
+            <img class="img1" src="Conjuntos/065-removebg-preview.png" alt="Conjunto Geovana">
+        </div>
+        <h3>Conjunto Geovana </h3>
+        <p class="preco">Preço R$ 34,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Geovana', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+</div>
+         <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="Conjuntos/089-removebg-preview.png" alt="Conjunto Bolinha">
+            <img class="img1" src="Conjuntos/088-removebg-preview.png" alt="Conjunto Bolinha">
+        </div>
+        <h3>Conjunto Bolinha </h3>
+        <p class="preco">Preço R$ 34,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Bolinha', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+</div>
+         <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="Conjuntos/083-removebg-preview.png" alt="Conjunto Cristal">
+            <img class="img1" src="Conjuntos/082-removebg-preview.png" alt="Conjunto Cristal">
+        </div>
+        <h3>Conjunto Cristal </h3>
+        <p class="preco">Preço R$ 34,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Bolinha', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+</div>
+         <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="Conjuntos/087-removebg-preview.png" alt="Conjunto Gisele">
+            <img class="img1" src="Conjuntos/086-removebg-preview.png" alt="Conjunto Gisele">
+        </div>
+        <h3>Conjunto Gisele </h3>
+        <p class="preco">Preço R$ 34,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Gisele', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+</div>
+         <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="Conjuntos/060-removebg-preview.png" alt="Conjunto Sandy">
+            <img class="img1" src="Conjuntos/059-removebg-preview.png" alt="Conjunto Sandy">
+        </div>
+        <h3>Conjunto Sandy </h3>
+        <p class="preco">Preço R$ 34,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Sandy', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+</div>
+         <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="Conjuntos/062-removebg-preview.png" alt="Conjunto Top Rendado">
+            <img class="img1" src="Conjuntos/061-removebg-preview.png" alt="Conjunto Top Rendado">
+        </div>
+        <h3>Conjunto Top Rendado </h3>
+        <p class="preco">Preço R$ 34,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Top Rendado ', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+    </div>
+         <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="Conjuntos/096-removebg-preview.png" alt="Conjunto Lua">
+            <img class="img1" src="Conjuntos/097-removebg-preview.png" alt="Conjunto Lua">
+        </div>
+        <h3>Conjunto Lua </h3>
+        <p class="preco">Preço R$ 34,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Lua ', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+</div>
+         <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="Conjuntos/074-removebg-preview.png" alt="Conjunto Monara">
+            <img class="img1" src="Conjuntos/073-removebg-preview.png" alt="Conjunto Monara">
+        </div>
+        <h3>Conjunto Monara</h3>
+        <p class="preco">Preço R$ 34,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Monara ', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+</div>
+         <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="Conjuntos/077-removebg-preview.png" alt="Conjunto Franciele Estampado">
+            <img class="img1" src="Conjuntos/078-removebg-preview.png" alt="Conjunto Franciele Estampado">
+        </div>
+        <h3>Conjunto Franciele Estampado</h3>
+        <p class="preco">Preço R$ 34,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Franciele Estampado ', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+    </div>
+         <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="Conjuntos/058-removebg-preview.png" alt="Conjunto Nayara">
+            <img class="img1" src="Conjuntos/079-removebg-preview.png" alt="Conjunto Nayara">
+        </div>
+        <h3>Conjunto Nayara</h3>
+        <p class="preco">Preço R$ 34,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Nayara ', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+    </div>
+         <div class="produto">
+        <div class="imagem-container">
+            <img class="img1" src="Conjuntos/054-removebg-preview.png" alt="Conjunto Vamp">
+            <img class="img1" src="Conjuntos/055-removebg-preview.png" alt="Conjunto Vamp">
+        </div>
+        <h3>Conjunto Vamp</h3>
+        <p class="preco">Preço R$ 34,90</p>
+        <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Nayara ', '#preco-1')">Adicionar ao carrinho</button>
+    </div>
+    </div>
+
+</section>
+<!--Seção que Recebe as Calcinhas Modelo Tanga -->
+<section id="tangas" class="animado">
+    <h2>Tangas</h2>
+    <div class="produtos-container">
+        <!-- Produtos -->
+    </div>
+</section>
+
+<section id="calcao" class="animado">
+    <h2>Calções</h2>
+    <div class="produtos-container">
+        <!-- Produtos -->
+    </div>
+</section>
+
+<section id="sutias" class="animado">
+    <h2>Sutiãs</h2>
+    <div class="produtos-container">
+        <!-- Produtos -->
+    </div>
+</section>
+
+<section id="camisolas" class="animado">
+    <h2>Camisolas</h2>
+      <div class="produto">
+            <img src="fotosRc/camisolas/052-removebg-preview.png" alt="Conjunto Sexy Vermelho">
+            
+            <h3>Camisola Desejo</h3>
+            <p class="preco"> Preço R$ 59,90</p>
+            <button class="btn" onclick="adicionarAoCarrinho(this, 'Camisola Desejo', '#preco-1')">Adicionar ao carrinho</button>
+        </div>
+        <div class="produto">
+        <img src="fotosRc/camisolas/052-removebg-preview.png" alt="Frente do Produto" class="img-frente" />
+        <img src="fotosRc/camisolas/051-removebg-preview(1).png" alt="Verso do Produto" class="img-verso" />
+    <h3>Conjunto Renata</h3>
+            <p id="preco-2" class="preco">R$ 49,90</p>
+            <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Renata', '#preco-2')">Adicionar ao carrinho</button>
+</div>
+
+    </div>
+</section>
+
+
+
+
+    <section id="loja-secreta" class="animado">
+  <h2>🔒 Loja Secreta Sex Shop</h2>
+  <p>Solicite a nossa loja secreta e descubra produtos exclusivos.</p>
+  <input type="password" id="senha-secreta" placeholder="Digite a senha secreta">
+  <button class="btn-secreta" onclick="acessarLojaSecreta()">Acessar Loja Secreta</button>
+
+  <!-- Conteúdo escondido que aparece com a senha -->
+  <div id="conteudo-secreto" style="display: none; margin-top: 1rem;">
+    <p><strong>🎁 Surpresa! Aqui estão os itens secretos da nossa coleção premium.</strong></p>
+
+    <div class="produtos-container">
+        <div class="produto animado">
+            <img src="FotosReformulada/091.png" alt="Conjunto Amanda">
+            <h3>Conjunto Franciele Bolinha</h3>
+            <p id="preco-1" class="preco">R$ 40,00</p>
+            <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Franciele Bolinha', '#preco-1')">Adicionar ao carrinho</button>
+        </div>
+        <div class="produto animado">
+            <img src="FotosReformulada/076-removebg-preview.png" alt="Lingerie 2">
+            <h3>Conjunto Renata</h3>
+            <p id="preco-2" class="preco">R$ 49,90</p>
+            <button class="btn" onclick="adicionarAoCarrinho(this, 'Conjunto Renata', '#preco-2')">Adicionar ao carrinho</button>
+        </div>
+    </div>
+</section>
+
+ <section id="contato" class="animado">
+        <h2>Você é Revendedor? Entre em Contato Conosco</h2>
+        <form action="mailto:contato@lojalingerie.com" method="post" enctype="text/plain">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2025 Loja de Lingerie. Todos os direitos reservados.</p>
+        <div class="social">
+            <a href="#">Instagram</a> |
+            <a href="#">Facebook</a> |
+            <a href="#">WhatsApp</a>
+        </div>
+        <a href="#" class="voltar-topo">Voltar ao topo</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
