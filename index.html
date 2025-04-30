@@ -8,7 +8,21 @@
     
 </head>
 <img src="FotosReformulada/logorenda.png" alt="Logo Renda & Charme" style="height: 200px; float: left; margin-left: 1%;">
+<div class="menu-icon" onclick="toggleMenu()">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+<!-- Menu Sanduíche (começa escondido) -->
+  <div id="menu" class="menu">
+    <a href="#home" onclick="closeMenu()">Início</a>
+    <a href="#categorias" onclick="closeMenu()">categorias</a>
+    <a href="#sobre" onclick="closeMenu()">Sobre</a>
+    <a href="#contato" onclick="closeMenu()">Contato</a>
+    <a href="#loja-secreta" onclick="closeMenu()">Loja Secreta</a>
+  </div>
 
+    
 <body>
       <!-- Carrinho de compras, que será atualizado dinamicamente -->
  <!-- Carrinho de Compras -->
@@ -23,15 +37,10 @@
 <button id="abrir-carrinho" class="btn-carrinho"></button>
 
     <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li><a href="#loja-secreta">Loja Secreta</a></li>
-            </ul>
-        </nav>
+       <div id="menu" class="menu">
+  <h2 style="color: white; margin-top: 40px;">Renda & Charme</h2>
+</div>
+   
     </header>
 
     <section id="home" class="animado">
