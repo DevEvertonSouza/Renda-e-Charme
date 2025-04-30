@@ -121,12 +121,10 @@ botaoCarrinho.addEventListener('click', () => {
     } else {
         divCarrinho.style.display = 'none';
     }
-
-
-
-
+});
     // Inicializa os produtos na primeira página
-    exibirProdutos('conjuntos');
+exibirProdutos('conjuntos');
+    
 // função que faz o menu sanduiche aparecer
 
 function toggleMenu() {
@@ -138,4 +136,3 @@ function closeMenu() {
   const menu = document.getElementById("menu");
   menu.classList.remove("show");
 }
-
