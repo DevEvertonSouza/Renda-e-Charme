@@ -7,7 +7,7 @@
 ---
 
 ## 🔗 Acesse a loja:
-👉 [Clique aqui para visitar o site](https://devevertonsouza.github.io/Loja-Renda-Charme/)
+👉 [Clique aqui para visitar o site  (https://devevertonsouza.github.io/Renda-e-Charme/#home)
 
 ---
 
