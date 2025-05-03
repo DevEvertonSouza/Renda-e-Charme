@@ -6,19 +6,30 @@
     box-sizing: border-box;
 }
 
-/* ---------------- Base ---------------- */
+/* ---------------- local para mudar as Letras do Site Principal  ---------------- */
 body {
-    font-family: 'Segoe UI', sans-serif;
-    line-height: 1.6;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1rem;
+    line-height: 1.5;
     background-color: #f8f0f4;
     color: #3b2f2f;
     scroll-behavior: smooth;
 }
+.nome-loja {/* Altera o nome da Loja na borda do site*/
+  color: bla;
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+ 
 
-/* ---------------- Header & Nav ---------------- */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ---------------- borda em cima do site ---------------- */
 header {
     background-color: #b76e79;
-    padding: 1rem;
+    padding: 0rem;
 }
 
 nav ul {
@@ -36,19 +47,20 @@ nav a {
 
 /* ---------------- Banner ---------------- */
 .banner {
-    text-align: center;
-    padding: 2rem rem;
+    text-align: left;
+    padding: 1.5rem;
     background: linear-gradient(to right, #e9c1c9, #f6d6dc);
 }
-
+/* Local que muda o Nome da Loja no Banner*/
 .banner h1 {
-    font-size: 2.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.0rem;
     margin-bottom: 1rem;
 }
 
 @media (max-width: 768px) {
     .banner h1 {
-        font-size: 1.8rem;
+        font-family: 'Playfair Display', serif;
     }
 }
 
@@ -81,7 +93,7 @@ section {
 .produtos-container {
     display: flex;
     justify-content: space-between;/*Espalha as imagens lado a lado*/
-    gap: 1rem;
+    gap: 0rem;
     flex-wrap: wrap;/*Garante que as imagens se ajuste se o espaço for pequeno*/
    
    
@@ -89,7 +101,7 @@ section {
 
 .produto {
     background-color: #ffffff;
-    border-radius: 12px;
+    border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
     padding: 1rem;
     text-align: center;
@@ -107,12 +119,12 @@ section {
     transform: translateY(-5px);
 }
 
-.produto img {
+.produto img { /*categorias*/
     width: 100%;
     height: auto; /* mantem a propoção da imagem*/
     max-width: 300px; /*limita o tamanho da largura da Imagem*/
     border-radius: 10px;
-    margin-bottom: 1rem;
+    margin-bottom:1rem;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
@@ -172,7 +184,7 @@ footer {
     position: fixed;
     right: 20px;
     bottom: 20px;
-    background-color: #a05266;
+    background-color:1;
     color: white;
     padding: 1rem;
     border-radius: 50%;
@@ -285,7 +297,8 @@ footer {
   }
 
   .banner h1 {
-    font-size: 1.8rem;
+    font-family: 'Playfair Display', serif;
+
   }
 
   nav ul {
@@ -306,7 +319,47 @@ footer {
     width: 90%;
     right: 5%;
   }
+
+  /* Ajustando a logo dentro do banner */
+  .logo {
+    height: px 1; /* Ajuste o tamanho conforme necessário */
+    width: auto;
+    margin-left: 5%; /* Ajusta a posição da logo */
+    margin-top: 100px;
+  }
+
+  /* Ajustando o título "Renda & Charme" no banner */
+  .banner h2 {
+    font-family: 'Playfair Display', serif;
+    margin-top: 0; /* Ajusta o espaço superior se necessário */
+    text-align:center; /* Centraliza o texto no banner */
+    z-index: 2;
+    color: white;
+  }
+
+  /* Ajustando o menu dentro do banner para ficar mais organizado no celular */
+  .menu {
+    flex-direction: column;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
+    position: relative;
+  }
+
+  /* Se houver espaço, você pode ajustar a largura ou tamanho do menu */
+  .menu a {
+    font-size: 1.5rem;
+    padding: 10px;
+    display: block;
+    color: white;
+    text-decoration: none;
+  }
+
+  .menu a:hover {
+    background-color: #333; /* Efeito de hover */
+  }
 }
+
+
 /* Estilo do botão sanduíche */
 .menu-icon {
   display: flex;
@@ -374,7 +427,7 @@ footer {
   background-color: #222;
 }
 
-/* Estilo do botão sanduíche dentro do cabeçalho */
+/* local que pode mudar o Estilo do botão sanduíche dentro do cabeçalho */
 .menu-icon {
   display: flex;
   flex-direction: column;
@@ -383,13 +436,14 @@ footer {
   height: 30px;
   cursor: pointer;
   position: fixed;
-  top: 20px;
+  top: 1px;
   right: 20px;
   z-index: 1001;
   padding: 5px;
   background-color: #f6d6dc; /* tom rosa claro */
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  image-orientation: flip;
 }
 
 .menu-icon:hover {
@@ -407,4 +461,3 @@ footer {
 .menu.show {
   display: flex;
 }
-
