@@ -77,8 +77,8 @@ nav a {
     cursor: pointer;
 }
 
-.btn:hover {
-    background-color: #8b3e52;
+.btn:hover {/*botao de adicionar o carrinho*/
+    background-color: #5ca34d;
     transform: scale(1.05);
 }
 
